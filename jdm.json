@@ -8,7 +8,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 250,
-        "image": "https://example.com/skyline_r34.jpg"
+        "image": "img/skyline_r34.png"
     },
     {
         "brand": "Toyota",
@@ -19,7 +19,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 250,
-        "image": "https://example.com/supra_mk4.jpg"
+        "image": "img/supra_mk4.jpg"
     },
     {
         "brand": "Mazda",
@@ -30,7 +30,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 250,
-        "image": "https://example.com/rx7_fd.jpg"
+        "image": "img/rx7_fd.jpg"
     },
     {
         "brand": "Honda",
@@ -41,7 +41,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 270,
-        "image": "https://example.com/nsx.jpg"
+        "image": "img/honda_nsx.png"
     },
     {
         "brand": "Subaru",
@@ -52,7 +52,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 240,
-        "image": "https://example.com/impreza_wrx_sti.jpg"
+        "image": "img/subaru_impreza.jpg"
     },
     {
         "brand": "Mitsubishi",
@@ -63,7 +63,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 250,
-        "image": "https://example.com/lancer_evo_vi.jpg"
+        "image": "img/lancer_evo.png"
     },
     {
         "brand": "Toyota",
@@ -74,7 +74,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 200,
-        "image": "https://example.com/ae86.jpg"
+        "image": "img/ae86.jpg"
     },
     {
         "brand": "Nissan",
@@ -85,7 +85,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 240,
-        "image": "https://example.com/silvia_s15.jpg"
+        "image": "img/silvia_s15.jpg"
     },
     {
         "brand": "Honda",
@@ -96,7 +96,7 @@
         "transmission": "Manual",
         "drivetrain": "FWD",
         "max_speed": 225,
-        "image": "https://example.com/civic_ek9.jpg"
+        "image": "img/civic_typeR.png"
     },
     {
         "brand": "Mazda",
@@ -107,7 +107,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 203,
-        "image": "https://example.com/mx5_na.jpg"
+        "image": "img/mx-5.jpg"
     },
     {
         "brand": "Nissan",
@@ -118,7 +118,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 250,
-        "image": "https://example.com/300zx.jpg"
+        "image": "img/nissan_300ZX.png"
     },
     {
         "brand": "Toyota",
@@ -129,7 +129,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 240,
-        "image": "https://example.com/celica_gtfour.jpg"
+        "image": "img/celica_gtfour.png"
     },
     {
         "brand": "Mitsubishi",
@@ -140,7 +140,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 250,
-        "image": "https://example.com/3000gt_vr4.jpg"
+        "image": "img/mitsubishi_3000GT.jpg"
     },
     {
         "brand": "Nissan",
@@ -151,7 +151,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 250,
-        "image": "https://example.com/fairlady_z32.jpg"
+        "image": "img/fairladyZ.jpg"
     },
     {
         "brand": "Toyota",
@@ -162,7 +162,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 230,
-        "image": "https://example.com/mr2_sw20.jpg"
+        "image": "img/mr2.jpg"
     },
     {
         "brand": "Subaru",
@@ -173,7 +173,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 240,
-        "image": "https://example.com/legacy_gtb.jpg"
+        "image": "img/legacy_gtb.png"
     },
     {
         "brand": "Mazda",
@@ -184,7 +184,7 @@
         "transmission": "Automatic",
         "drivetrain": "RWD",
         "max_speed": 250,
-        "image": "https://example.com/eunos_cosmo.jpg"
+        "image": "img/eunos_cosmo.jpg"
     },
     {
         "brand": "Honda",
@@ -195,7 +195,7 @@
         "transmission": "Manual",
         "drivetrain": "FWD",
         "max_speed": 235,
-        "image": "https://example.com/integra_dc2.jpg"
+        "image": "img/integra_typR.jpg"
     },
     {
         "brand": "Nissan",
@@ -206,7 +206,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 225,
-        "image": "https://example.com/pulsar_gtir.jpg"
+        "image": "img/pulsar_gtiR.jpg"
     },
     {
         "brand": "Toyota",
@@ -217,7 +217,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 245,
-        "image": "https://example.com/chaser_jzx100.jpg"
+        "image": "img/chaser_jzx100.png"
     },
     {
         "brand": "Mazda",
@@ -228,7 +228,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 240,
-        "image": "https://example.com/rx8.jpg"
+        "image": "img/rx8.jpg"
     },
     {
         "brand": "Nissan",
@@ -239,7 +239,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 220,
-        "image": "https://example.com/180sx.jpg"
+        "image": "img/180sx.jpg"
     },
     {
         "brand": "Subaru",
@@ -250,7 +250,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 235,
-        "image": "https://example.com/forester_sti.jpg"
+        "image": "img/foresterSTI.jpg"
     },
     {
         "brand": "Toyota",
@@ -261,7 +261,7 @@
         "transmission": "Automatic",
         "drivetrain": "RWD",
         "max_speed": 230,
-        "image": "https://example.com/crown_athlete.jpg"
+        "image": "img/crown_athlete.jpg"
     },
     {
         "brand": "Nissan",
@@ -272,7 +272,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 240,
-        "image": "https://example.com/stagea_260rs.jpg"
+        "image": "img/stagea_260RS.png"
     },
     {
         "brand": "Mazda",
@@ -283,7 +283,7 @@
         "transmission": "Manual",
         "drivetrain": "FWD",
         "max_speed": 225,
-        "image": "https://example.com/mx6.jpg"
+        "image": "img/mx-6.png"
     },
     {
         "brand": "Mitsubishi",
@@ -294,7 +294,7 @@
         "transmission": "Manual",
         "drivetrain": "AWD",
         "max_speed": 240,
-        "image": "https://example.com/galant_vr4.jpg"
+        "image": "img/galant.jpg"
     },
     {
         "brand": "Nissan",
@@ -305,7 +305,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 240,
-        "image": "https://example.com/laurel_c35.jpg"
+        "image": "img/laurel_c35.jpg"
     },
     {
         "brand": "Toyota",
@@ -316,7 +316,7 @@
         "transmission": "Manual",
         "drivetrain": "RWD",
         "max_speed": 245,
-        "image": "https://example.com/markii_jzx90.jpg"
+        "image": "img/mark_jzx90.jpg"
     },
     {
         "brand": "Honda",
@@ -327,6 +327,6 @@
         "transmission": "Manual",
         "drivetrain": "FWD",
         "max_speed": 225,
-        "image": "https://example.com/prelude_sir.jpg"
+        "image": "img/prelude_sir.png"
     }
 ]
