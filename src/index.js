@@ -2,8 +2,14 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
+//Importar rutas
+const carRoutes = require('./routes/cars');
+
 //Middleware para parsear JSON
 app.use(express.json());
+
+//Usar las rutas
+app.use('/api', carRoutes);
 
 //Ruta para probar el servidor
 app.get("/", (req, res) => {
