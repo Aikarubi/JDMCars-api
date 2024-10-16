@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3000;
 
 //Importar rutas
-const carRoutes = require('./routes/cars');
+const carRoutes = require('./routes/carRoutes');
 
 //Middleware para parsear JSON
 app.use(express.json());
