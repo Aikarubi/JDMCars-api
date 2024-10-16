@@ -5,10 +5,20 @@ const fs = require('fs');
 
 //Leer los datos del archivo JSON
 const carsFilePath = path.join(__dirname, '../../data/cars.json');
-let carsData = JSON.parse(fs.readFileSync(carsFilePath, 'utf-8'));
+console.log('Ruta del archivo cars.json:', carsFilePath);
+/*let carsData = JSON.parse(fs.readFileSync(carsFilePath, 'utf-8'));*/
+
+let carsData;
+try {
+    carsData = JSON.parse(fs.readFileSync(carsFilePath, 'utf-8'));
+    console.log('Datos de coches cargados con éxito');
+} catch (error) {
+    console.error('Error al leer o parsear el archivo JSON:', error);
+}
 
 //Funcion para obtener todos los coches
 const getAllCars = (req, res) => {
+    console.log('getAllCars ejecutado');
     res.json(carsData);
 }
 

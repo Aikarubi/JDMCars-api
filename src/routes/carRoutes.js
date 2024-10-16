@@ -8,4 +8,4 @@ const carController = require('../controllers/carController');
 router.get('/cars', carController.getAllCars); //Obtener todos los coches
 router.get('/cars/:id', carController.getCarById); //Obtener un coche por su id
 
-module.exports = router
+module.exports = router;
