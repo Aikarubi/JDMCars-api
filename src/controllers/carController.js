@@ -35,7 +35,7 @@ const getCarById = (req, res) => {
 };
 
 //Función para buscar coches por varios parámetros
-const searchCars = (req, res) => {
+/*const searchCars = (req, res) => {
     let { brand, model, year, engine, horsepower, transmission, drivetrain, max_speed } = req.query;
 
     //Convertir rangos de año si están presentes
@@ -63,10 +63,22 @@ const searchCars = (req, res) => {
         res.status(404).send('No se encontraron coches que coincidan con los parámetros de búsqueda');
     }
 
+};*/
+
+//Función para buscar coches por marca
+const searchCarsByBrand = (req, res) => {
+    const brand = req.params.brand.toLowerCase();
+    const filteredCars = carsData.filter(car => car.brand.toLowerCase() === brand);
+    if (filteredCars.length > 0) {
+        res.json(filteredCars);
+    } else {
+        res.status(404).send('No se encontraron coches que coincidan con la marca');
+    }
 };
 
 module.exports = {
     getAllCars,
     getCarById,
-    searchCars
+    searchCarsByBrand
+    //searchCars
 };
