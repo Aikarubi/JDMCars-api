@@ -8,8 +8,12 @@ const carController = require('../controllers/carController');
 router.get('/cars', carController.getAllCars); //Obtener todos los coches
 router.get('/cars/:id', carController.getCarById); //Obtener un coche por su id
 router.get('/cars/search/:brand', carController.searchCarsByBrand); //Buscar coches por marca
-//router.get('/cars/search/:brand/:model', carController.searchCarsByBrandAndModel); //Buscar coches por marca y modelo
-
+//router.get('/cars/randomCar', carController.randomCars); //Obtener coches aleatorios
+router.get('/cars/test', carController.testFunction);
+router.get('/test', (req, res) => {
+    console.log('testFunction ejecutado');
+    res.json({ message: 'Funcionando correctamente' });
+});
 
 
 module.exports = router;
