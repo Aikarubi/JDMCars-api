@@ -76,6 +76,8 @@ const searchCarsByBrand = (req, res) => {
     }
 };
 
+
+
 module.exports = {
     getAllCars,
     getCarById,

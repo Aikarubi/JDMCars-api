@@ -7,6 +7,9 @@ const carController = require('../controllers/carController');
 //Rutas
 router.get('/cars', carController.getAllCars); //Obtener todos los coches
 router.get('/cars/:id', carController.getCarById); //Obtener un coche por su id
-//router.get('/cars/search', carController.searchCars); //Buscar coches por marca
 router.get('/cars/search/:brand', carController.searchCarsByBrand); //Buscar coches por marca
+//router.get('/cars/search/:brand/:model', carController.searchCarsByBrandAndModel); //Buscar coches por marca y modelo
+
+
+
 module.exports = router;
