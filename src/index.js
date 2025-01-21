@@ -1,24 +1,12 @@
-const express = require("express");
+const express = require('express');
+const v1CarRouter = require('./v1/routes/carRoutes');
+
 const app = express();
-const cors = require('cors');
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-//Importar rutas
-const carRoutes = require('./routes/carRoutes');
-
-//Middleware para parsear JSON
-app.use(cors());
 app.use(express.json());
+app.use("/api/v1/cars", v1CarRouter);
 
-//Usar las rutas
-app.use('/api', carRoutes);
-
-//Ruta para probar el servidor
-app.get("/", (req, res) => {
-    res.send('¡Bienvenido a la API de coches JDM!');
-});
-
-//Iniciar el servidor
 app.listen(PORT, () => {
-    console.log(`Servidor iniciado en el puerto ${PORT}`);
-})
+    console.log(`🚀 Server is running on port ${PORT}`);
+});
