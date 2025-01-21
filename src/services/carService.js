@@ -5,6 +5,11 @@ const getAllCars = () => {
     return allCars;
 }
 
+const getAllBrands = () => {
+    const allBrands = Car.getAllBrands();
+    return allBrands;
+}
+
 const getOneCar = (id) => {
     const car = Car.getOneCar(id);
     return car;
@@ -19,5 +24,6 @@ module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
+    getAllBrands
  
 }

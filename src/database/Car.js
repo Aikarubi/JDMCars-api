@@ -4,6 +4,11 @@ const getAllCars = () => {
     return DB.cars;
 };
 
+const getAllBrands = () => {
+    const brands = DB.cars.map(car => car.brand);
+    return [...new Set(brands)];
+}
+
 const getOneCar = (id) => {
     return DB.cars.find(car => car.id === id);
 };
@@ -18,4 +23,6 @@ module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
+    getAllBrands,
+ 
 };

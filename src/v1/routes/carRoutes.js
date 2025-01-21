@@ -4,6 +4,7 @@ const carController = require('../../controllers/carController');
 
 router
     .get('/random', carController.getRandomCar)
+    .get('/brands', carController.getAllBrands)
     .get('/:id', carController.getOneCar)
     .get('/', carController.getAllCars)
 
