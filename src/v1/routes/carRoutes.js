@@ -3,8 +3,8 @@ const router = express.Router();
 const carController = require('../../controllers/carController');
 
 router
+    .get('/random', carController.getRandomCar)
+    .get('/:id', carController.getOneCar)
     .get('/', carController.getAllCars)
-    .get('/:id', carController.getOneCar);
-
 
 module.exports = router;

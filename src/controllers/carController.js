@@ -11,7 +11,14 @@ const getOneCar = (req, res) => {
     res.send({ status: "OK", data: car });
 }
 
+const getRandomCar = (req, res) => {
+    const randomCar = carService.getRandomCar();
+    res.send({ status: "OK", data: randomCar });
+}
+
 module.exports = {
     getAllCars,
-    getOneCar
+    getOneCar,
+    getRandomCar,
+ 
 }

@@ -10,7 +10,14 @@ const getOneCar = (id) => {
     return car;
 }
 
+const getRandomCar = () => {
+    const randomCar = Car.getRandomCar();
+    return randomCar;
+}
+
 module.exports = {
     getAllCars,
-    getOneCar
+    getOneCar,
+    getRandomCar,
+ 
 }
