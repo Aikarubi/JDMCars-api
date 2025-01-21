@@ -6,6 +6,7 @@ router
     .get('/random', carController.getRandomCar)
     .get('/brands', carController.getAllBrands)
     .get('/stats', carController.getGlobalStats)
+    .get('/paginated', carController.getPaginatedCars)
     .get('/:id', carController.getOneCar)
     .get('/', carController.getAllCars)
 

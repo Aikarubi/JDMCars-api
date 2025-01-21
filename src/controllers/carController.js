@@ -26,11 +26,18 @@ const getGlobalStats = (req, res) => {
     res.send({ status: "OK", data: stats });
 };
 
+const getPaginatedCars = (req, res) => {
+    const { page = 1, limit = 10 } = req.query; // Parámetros con valores predeterminados
+    const paginatedResult = carService.getPaginatedCars(Number(page), Number(limit));
+    res.send({ status: "OK", data: paginatedResult });
+};
+
 module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
     getAllBrands,
-    getGlobalStats
+    getGlobalStats,
+    getPaginatedCars
  
 }

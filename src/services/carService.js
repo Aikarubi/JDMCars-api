@@ -24,11 +24,28 @@ const getGlobalStats = () => {
     return Car.getGlobalStats();
 };
 
+const getPaginatedCars = (page, limit) => {
+    const allCars = Car.getAllCars();
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    const paginatedCars = allCars.slice(startIndex, endIndex);
+
+
+    return {
+        currentPage: page,
+        totalPages: Math.ceil(allCars.length / limit),
+        totalCars: allCars.length,
+        data: paginatedCars
+    };
+}
+
 module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
     getAllBrands,
-    getGlobalStats
+    getGlobalStats,
+    getPaginatedCars
  
 }
