@@ -20,10 +20,15 @@ const getRandomCar = () => {
     return randomCar;
 }
 
+const getGlobalStats = () => {
+    return Car.getGlobalStats();
+};
+
 module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
-    getAllBrands
+    getAllBrands,
+    getGlobalStats
  
 }

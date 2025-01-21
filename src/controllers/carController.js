@@ -21,10 +21,16 @@ const getRandomCar = (req, res) => {
     res.send({ status: "OK", data: randomCar });
 }
 
+const getGlobalStats = (req, res) => {
+    const stats = carService.getGlobalStats();
+    res.send({ status: "OK", data: stats });
+};
+
 module.exports = {
     getAllCars,
     getOneCar,
     getRandomCar,
     getAllBrands,
+    getGlobalStats
  
 }
