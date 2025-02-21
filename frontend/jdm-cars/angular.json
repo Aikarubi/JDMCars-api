@@ -31,7 +31,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/modernizr.js"
+            ]
           },
           "configurations": {
             "production": {
