@@ -1,0 +1,63 @@
+.footer {
+    background-color: var(--primarioHover);
+    color: var(--secundario);
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.datos,
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 120rem;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+p {
+    font-size: 1.8rem;
+    color: var(--secundario);
+    transition: color 0.3s ease;
+}
+
+/* Mejorar la separación de cada bloque */
+.datos p, .redes p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.redes p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0;
+    }
+
+    .datos, .redes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lista {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
