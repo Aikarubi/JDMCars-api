@@ -29,7 +29,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/normalize.css"
             ],
             "scripts": [
               "src/assets/modernizr.js"
