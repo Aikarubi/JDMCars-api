@@ -27,6 +27,11 @@ body {
     line-height: 2;
 }
 
+html, body {
+    overflow: hidden;
+}
+
+
 /* Globales */
 .contenedor {
     max-width: 120rem;

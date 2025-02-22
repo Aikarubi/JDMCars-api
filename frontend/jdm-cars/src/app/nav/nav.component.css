@@ -1,0 +1,25 @@
+.navegacion-principal {
+    position: absolute;
+    top: 2rem; /* Ajusta según necesites */
+    right: 4rem; /* Ajusta según necesites */
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacion-principal a {
+    font-size: 2rem;
+    color: var(--secundario);
+    text-decoration: none;
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--secundario);
+    font-size: 2.5rem;
+    margin: 0 1rem;
+}
+
+a:hover {
+    color: var(--secundarioHover);
+}
