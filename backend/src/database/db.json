@@ -629,6 +629,132 @@
             "description": "The Honda Prelude SiR (1992-1996) is powered by a H22A engine with 197 HP. It features a FWD drivetrain and is known for its exceptional performance and reliability.",
             "acceleration": "4.5 seconds (0-100 km/h)",
             "image": "img/prelude_sir.png"
+        },
+        {
+            "id": "31",
+            "brand": "Subaru",
+            "model": "BRZ",
+            "year": {
+                "start": 2012,
+                "end": 2021
+            },
+            "engine": "FA20 H4",
+            "horsepower": 205,
+            "transmission": "Manual",
+            "drivetrain": "RWD",
+            "max_speed": 225,
+            "weight": 1250,
+            "fuel_consumption": "7.8 L/100 km",
+            "price": "$28,000",
+            "country": "Japan",
+            "description": "The Subaru BRZ (2012-2021) is a lightweight sports coupe with an FA20 H4 engine producing 205 HP. Known for its handling and driving pleasure.",
+            "acceleration": "6.3 seconds (0-100 km/h)",
+            "image": "img/subaru_brz.jpg"
+        },
+        {
+            "id": "32",
+            "brand": "Subaru",
+            "model": "WRX STI",
+            "year": {
+                "start": 2014,
+                "end": 2021
+            },
+            "engine": "EJ257 Turbo",
+            "horsepower": 310,
+            "transmission": "Manual",
+            "drivetrain": "AWD",
+            "max_speed": 250,
+            "weight": 1550,
+            "fuel_consumption": "10.5 L/100 km",
+            "price": "$40,000",
+            "country": "Japan",
+            "description": "The Subaru WRX STI (2014-2021) is a high-performance AWD sedan with rally heritage, featuring a 310 HP EJ257 Turbo engine.",
+            "acceleration": "5.2 seconds (0-100 km/h)",
+            "image": "img/subaru_wrx_sti.jpg"
+        },
+        {
+            "id": "33",
+            "brand": "Suzuki",
+            "model": "Swift Sport",
+            "year": {
+                "start": 2012,
+                "end": 2021
+            },
+            "engine": "K14C BoosterJet",
+            "horsepower": 140,
+            "transmission": "Manual",
+            "drivetrain": "FWD",
+            "max_speed": 210,
+            "weight": 970,
+            "fuel_consumption": "6.1 L/100 km",
+            "price": "$20,000",
+            "country": "Japan",
+            "description": "The Suzuki Swift Sport (2012-2021) is a lightweight hot hatch with a fun-to-drive character, powered by a 140 HP turbocharged engine.",
+            "acceleration": "7.5 seconds (0-100 km/h)",
+            "image": "img/suzuki_swift_sport.jpg"
+        },
+        {
+            "id": "34",
+            "brand": "Suzuki",
+            "model": "Cappuccino",
+            "year": {
+                "start": 1991,
+                "end": 1997
+            },
+            "engine": "F6A Turbo",
+            "horsepower": 64,
+            "transmission": "Manual",
+            "drivetrain": "RWD",
+            "max_speed": 150,
+            "weight": 700,
+            "fuel_consumption": "5.5 L/100 km",
+            "price": "$15,000",
+            "country": "Japan",
+            "description": "The Suzuki Cappuccino (1991-1997) is a kei sports car with a turbocharged F6A engine, delivering an exciting drive in a compact package.",
+            "acceleration": "9.0 seconds (0-100 km/h)",
+            "image": "img/suzuki_cappuccino.jpg"
+        },
+        {
+            "id": "35",
+            "brand": "Lexus",
+            "model": "LFA",
+            "year": {
+                "start": 2010,
+                "end": 2012
+            },
+            "engine": "1LR-GUE V10",
+            "horsepower": 552,
+            "transmission": "Automatic",
+            "drivetrain": "RWD",
+            "max_speed": 325,
+            "weight": 1480,
+            "fuel_consumption": "14.5 L/100 km",
+            "price": "$375,000",
+            "country": "Japan",
+            "description": "The Lexus LFA (2010-2012) is an iconic supercar featuring a 552 HP V10 engine with an exhilarating sound and carbon-fiber body.",
+            "acceleration": "3.7 seconds (0-100 km/h)",
+            "image": "img/lexus_lfa.jpg"
+        },
+        {
+            "id": "36",
+            "brand": "Lexus",
+            "model": "IS F",
+            "year": {
+                "start": 2008,
+                "end": 2014
+            },
+            "engine": "2UR-GSE V8",
+            "horsepower": 416,
+            "transmission": "Automatic",
+            "drivetrain": "RWD",
+            "max_speed": 270,
+            "weight": 1700,
+            "fuel_consumption": "11.2 L/100 km",
+            "price": "$65,000",
+            "country": "Japan",
+            "description": "The Lexus IS F (2008-2014) is a high-performance sedan powered by a naturally aspirated 5.0L V8 engine producing 416 HP.",
+            "acceleration": "4.6 seconds (0-100 km/h)",
+            "image": "img/lexus_is_f.jpg"
         }
     ]
 }
