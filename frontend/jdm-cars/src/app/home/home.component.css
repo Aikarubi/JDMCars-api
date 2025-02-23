@@ -4,7 +4,7 @@
     text-align: center;
     padding: 10rem 2rem;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .home h1 {
