@@ -74,7 +74,7 @@ const carSchema = new mongoose.Schema({
     country: String,
     description: String,
     acceleration: String,
-    image: String
+    image: String,
 });
 
 // Creamos el modelo Car basado en el esquema

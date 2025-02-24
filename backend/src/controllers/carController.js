@@ -2,23 +2,31 @@ const carService = require('../services/carService');
 
 const getAllCars = async (req, res) => {
     try {
-        const allCars = await carService.getAllCars(); // 🔹 Esperamos la respuesta de la DB
+        const allCars = await carService.getAllCars(); 
         res.send({ status: "OK", data: allCars });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 }
 
-const getAllBrands = (req, res) => {
-    const allBrands = carService.getAllBrands();
-    res.send({ status: "OK", data: allBrands });
+const getAllBrands = async (req, res) => {
+    try {
+        const allBrands = await carService.getAllBrands(); 
+        res.send({ status: "OK", data: allBrands });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 }
 
-const getOneCar = (req, res) => {
-    const id = req.params.id;
-    const car = carService.getOneCar(id);
-    res.send({ status: "OK", data: car });
-}
+const getOneCar = async (req, res) => {
+    try {
+        const id = req.params.id;  // Recibimos el ID como string
+        const car = await carService.getOneCar(id);
+        res.send({ status: "OK", data: car });
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
 
 const getRandomCar = (req, res) => {
     const randomCar = carService.getRandomCar();
