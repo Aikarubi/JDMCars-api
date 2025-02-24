@@ -73,21 +73,29 @@ const getGlobalStats = async () => {
     }
 };
 
-const getPaginatedCars = (page, limit) => {
-    const allCars = Car.getAllCars();
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
+const getPaginatedCars = async (page, limit) => {
+    try {
+        const pageNumber = Math.max(1, page); // Asegura que la página mínima sea 1
+        const limitNumber = Math.max(1, limit); // Asegura que el límite mínimo sea 1
 
-    const paginatedCars = allCars.slice(startIndex, endIndex);
+        // Obtener el total de coches
+        const totalCars = await Car.countDocuments();
 
+        // Calcular cuántos documentos saltar (skip) y cuántos mostrar (limit)
+        const cars = await Car.find()
+            .skip((pageNumber - 1) * limitNumber)
+            .limit(limitNumber);
 
-    return {
-        currentPage: page,
-        totalPages: Math.ceil(allCars.length / limit),
-        totalCars: allCars.length,
-        data: paginatedCars
-    };
-}
+        return {
+            currentPage: pageNumber,
+            totalPages: Math.ceil(totalCars / limitNumber),
+            totalCars,
+            data: cars
+        };
+    } catch (error) {
+        throw new Error("Error al obtener coches paginados: " + error.message);
+    }
+};
 
 module.exports = {
     getAllCars,

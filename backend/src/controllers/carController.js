@@ -46,10 +46,16 @@ const getGlobalStats = async (req, res) => {
     }
 };
 
-const getPaginatedCars = (req, res) => {
-    const { page = 1, limit = 10 } = req.query; // Parámetros con valores predeterminados
-    const paginatedResult = carService.getPaginatedCars(Number(page), Number(limit));
-    res.send({ status: "OK", data: paginatedResult });
+const getPaginatedCars = async (req, res) => {
+    try {
+        const page = Number(req.query.page) || 1;
+        const limit = Number(req.query.limit) || 10;
+
+        const paginatedResult = await carService.getPaginatedCars(page, limit);
+        res.send({ status: "OK", data: paginatedResult });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
 module.exports = {
