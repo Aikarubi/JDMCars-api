@@ -31,11 +31,17 @@ const getOneCar = async (id) => {
     }
 };
 
-const getRandomCar = () => {
-    const randomCar = Car.getRandomCar();
-    return randomCar;
-}
+const getRandomCar = async () => {
+    try {
+        const randomCar = await Car.aggregate([{ $sample: { size: 1 } }]); // Obtiene un coche aleatorio
 
+        if (!randomCar.length) throw new Error("No hay coches en la base de datos");
+
+        return randomCar[0]; // Devuelve el primer (y único) resultado
+    } catch (error) {
+        throw new Error("Error al obtener un coche aleatorio: " + error.message);
+    }
+};
 const getGlobalStats = () => {
     return Car.getGlobalStats();
 };

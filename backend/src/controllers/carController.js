@@ -28,10 +28,14 @@ const getOneCar = async (req, res) => {
     }
 };
 
-const getRandomCar = (req, res) => {
-    const randomCar = carService.getRandomCar();
-    res.send({ status: "OK", data: randomCar });
-}
+const getRandomCar = async (req, res) => {
+    try {
+        const randomCar = await carService.getRandomCar();
+        res.send({ status: "OK", data: randomCar });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 
 const getGlobalStats = (req, res) => {
     const stats = carService.getGlobalStats();
