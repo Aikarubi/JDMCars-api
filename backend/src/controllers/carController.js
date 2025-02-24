@@ -37,9 +37,13 @@ const getRandomCar = async (req, res) => {
     }
 };
 
-const getGlobalStats = (req, res) => {
-    const stats = carService.getGlobalStats();
-    res.send({ status: "OK", data: stats });
+const getGlobalStats = async (req, res) => {
+    try {
+        const stats = await carService.getGlobalStats();
+        res.send({ status: "OK", data: stats });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
 const getPaginatedCars = (req, res) => {

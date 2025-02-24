@@ -42,8 +42,35 @@ const getRandomCar = async () => {
         throw new Error("Error al obtener un coche aleatorio: " + error.message);
     }
 };
-const getGlobalStats = () => {
-    return Car.getGlobalStats();
+const getGlobalStats = async () => {
+    try {
+        const stats = await Car.aggregate([
+            {
+                $group: {
+                    _id: null, 
+                    totalCars: { $sum: 1 }, // Total de coches
+                    totalBrands: { $addToSet: "$brand" }, // Lista de marcas únicas
+                    avgHorsepower: { $avg: "$horsepower" }, // Potencia media
+                    avgMaxSpeed: { $avg: "$max_speed" } // Velocidad máxima media
+                }
+            },
+            {
+                $project: {
+                    _id: 0,
+                    totalCars: 1,
+                    totalBrands: { $size: "$totalBrands" }, // Contamos las marcas únicas
+                    avgHorsepower: { $round: ["$avgHorsepower", 2] }, // Redondeamos a 2 decimales
+                    avgMaxSpeed: { $round: ["$avgMaxSpeed", 2] }
+                }
+            }
+        ]);
+
+        if (!stats.length) throw new Error("No hay datos disponibles");
+
+        return stats[0]; // Devolvemos el primer objeto
+    } catch (error) {
+        throw new Error("Error al obtener estadísticas globales: " + error.message);
+    }
 };
 
 const getPaginatedCars = (page, limit) => {
