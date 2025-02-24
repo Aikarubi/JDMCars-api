@@ -1,7 +1,5 @@
-const mongoose = require('mongoose');
-
-// Importar variables de entorno
 require('dotenv').config();
+const mongoose = require('mongoose');
 
 // Conectar a MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI)

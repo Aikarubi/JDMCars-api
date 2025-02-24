@@ -1,10 +1,14 @@
+require("dotenv").config();
 const express = require('express');
 const v1CarRouter = require('./v1/routes/carRoutes');
-const db = require('../database/database');
-require("dotenv").config();
+const db = require('./database/database');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB
+db.connect();
 
 app.use(express.json());
 app.use("/api/v1/cars", v1CarRouter);
