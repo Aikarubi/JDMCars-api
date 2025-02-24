@@ -48,7 +48,7 @@ const getGlobalStats = async () => {
             {
                 $group: {
                     _id: null, 
-                    totalCars: { $sum: 1 }, // Total de coches
+                    totalCars: { $sum: 1 },
                     totalBrands: { $addToSet: "$brand" }, // Lista de marcas únicas
                     avgHorsepower: { $avg: "$horsepower" }, // Potencia media
                     avgMaxSpeed: { $avg: "$max_speed" } // Velocidad máxima media
