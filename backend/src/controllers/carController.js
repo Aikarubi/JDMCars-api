@@ -1,8 +1,12 @@
 const carService = require('../services/carService');
 
-const getAllCars = (req, res) => {
-    const allCars = carService.getAllCars();
-    res.send({ status: "OK", data: allCars });
+const getAllCars = async (req, res) => {
+    try {
+        const allCars = await carService.getAllCars(); // 🔹 Esperamos la respuesta de la DB
+        res.send({ status: "OK", data: allCars });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 }
 
 const getAllBrands = (req, res) => {

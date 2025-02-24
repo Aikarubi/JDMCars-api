@@ -1,8 +1,14 @@
 const Car = require('../database/Car');
 
-const getAllCars = () => {
-    const allCars = Car.getAllCars();
-    return allCars;
+const getAllCars = async () => {
+    /*const allCars = Car.getAllCars();
+    return allCars;*/
+
+    try {
+        return await Car.find(); //  Obtiene todos los coches de MongoDB
+    } catch (error) {
+        throw new Error("Error al obtener coches: " + error.message);
+    }
 }
 
 const getAllBrands = () => {
