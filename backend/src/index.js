@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 connectDB();
 
 app.use(express.json());
-app.use("/api/v1/cars", v1CarRouter);
+app.use("/v1/cars", v1CarRouter);
 
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on port ${PORT}`);
