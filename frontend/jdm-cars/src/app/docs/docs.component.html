@@ -1,1 +1,80 @@
-<p>docs works!</p>
+<div class="nav">
+    <app-nav></app-nav>
+</div>
+
+<main>
+
+    <section id="docs" class="content">
+        <h2>Introducción</h2>
+        <p>Bienvenido a la API JDM, una plataforma diseñada para los amantes de los coches japoneses. Aquí encontrarás
+            información detallada sobre distintos modelos, especificaciones técnicas y características clave.</p>
+        <p>Esta guía te ayudará a entender cómo utilizar la API de forma efectiva y aprovechar sus funciones al máximo.
+        </p>
+
+        <h3>Ruta Principal</h3>
+        <p>La API parte de la ruta principal proporcionada por Render:
+            <code style="background-color: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;">https://api-jdm.onrender.com/v1/cars</code>. A partir de esta base, puedes acceder a todos los
+            endpoints disponibles.</p>
+
+        <h3>Paginación</h3>
+        <p>La API utiliza un sistema de paginación para facilitar la navegación entre grandes volúmenes de datos. Puedes
+            utilizar los parámetros <code>?page</code> y <code>?limit</code> para controlar los resultados.</p>
+        <p><strong>Ejemplo de input:</strong></p>
+        <pre
+            style="background-color: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>GET https://api-jdm.onrender.com/v1/cars?page=1&limit=2</code></pre>
+        <p><strong>Ejemplo de output:</strong></p>
+        <pre style="background-color: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;">
+    <code>&lbrace;
+    "page": 1,
+    "limit": 2,
+    "total": 36,
+    "cars": [
+    &lbrace;
+        "id": 1,
+        "brand": "Nissan",
+        "model": "Skyline GT-R",
+        "year": 1995
+        &lbrace;,
+        &lbrace;
+        "id": 2,
+        "brand": "Toyota",
+        "model": "Supra",
+        "year": 1998
+        &lbrace;
+    ]
+    &lbrace;</code>
+</pre>
+    </section>
+
+    <section class="content">
+        <h2>Estructura y Endpoints</h2>
+        <p>La API está organizada en rutas claras y sencillas, comenzando por la base <code>/v1/cars</code>. A partir de
+            ahí, puedes acceder a diferentes endpoints para obtener listas de coches, detalles específicos y realizar
+            búsquedas avanzadas.</p>
+        <p>Por ejemplo, puedes utilizar <code style="background-color: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto;">/v1/cars?brand=Nissan</code> para filtrar por marca.</p>
+    </section>
+
+    <section class="content">
+        <h2>Parámetros y Filtrado</h2>
+        <p>La API permite utilizar parámetros como marca, año y tipo de motor para filtrar los resultados según tus
+            necesidades. Esto facilita encontrar modelos específicos sin complicaciones.</p>
+        <p>Ejemplo de uso: <code>/v1/cars?year=1995&engine=turbo</code>.</p>
+    </section>
+
+    <section class="content">
+        <h2>Objetivos y Mejoras Futuras</h2>
+        <p>Entre los objetivos a futuro, se planea añadir motocicletas a la API, implementar nuevas funciones como
+            comparaciones detalladas y mejorar los sistemas de filtrado.</p>
+        <p>Además, se trabajará en la optimización del rendimiento, asegurando tiempos de respuesta rápidos y eficientes
+            incluso con grandes volúmenes de datos.</p>
+        <p>La documentación también será ampliada, incluyendo ejemplos prácticos y casos de uso detallados para
+            simplificar la implementación por parte de los desarrolladores.</p>
+    </section>
+
+    <section id="about" class="content">
+        <h2>Sobre esta Guía</h2>
+        <p>Esta guía ha sido creada para facilitar el uso de la API JDM y brindar toda la información necesaria de forma
+            clara y precisa.</p>
+        <p>Si tienes sugerencias o encuentras algún problema, no dudes en ponerte en contacto.</p>
+    </section>
+</main>
