@@ -77,25 +77,37 @@ const filterCars = async (filters) => {
     try {
         const query = {};
 
-        // Aplica filtros solo si existen y no están vacíos
-        if (filters.brand) query.brand = { $regex: new RegExp(filters.brand, 'i') };  // Búsqueda parcial e insensible a mayúsculas
+        // Aplicar filtros con regex para campos de texto
+        if (filters.brand) query.brand = { $regex: new RegExp(filters.brand, 'i') };
         if (filters.model) query.model = { $regex: new RegExp(filters.model, 'i') };
-        if (filters.year) query.year = parseInt(filters.year);
         if (filters.engine) query.engine = { $regex: new RegExp(filters.engine, 'i') };
-        if (filters.horsepower) query.horsepower = parseInt(filters.horsepower);
         if (filters.transmission) query.transmission = { $regex: new RegExp(filters.transmission, 'i') };
         if (filters.drivetrain) query.drivetrain = { $regex: new RegExp(filters.drivetrain, 'i') };
-        if (filters.max_speed) query.max_speed = parseInt(filters.max_speed);
-        if (filters.weight) query.weight = parseInt(filters.weight);
         if (filters.fuel_consumption) query.fuel_consumption = { $regex: new RegExp(filters.fuel_consumption, 'i') };
         if (filters.price) query.price = { $regex: new RegExp(filters.price, 'i') };
         if (filters.country) query.country = { $regex: new RegExp(filters.country, 'i') };
         if (filters.acceleration) query.acceleration = { $regex: new RegExp(filters.acceleration, 'i') };
 
-        // Ejecutar consulta
+        // Aplicar filtros para campos numéricos
+        if (filters.horsepower) query.horsepower = parseInt(filters.horsepower);
+        if (filters.max_speed) query.max_speed = parseInt(filters.max_speed);
+        if (filters.weight) query.weight = parseInt(filters.weight);
+
+        // Filtro especial para year como objeto
+        if (filters.year) {
+            const year = parseInt(filters.year);
+            query["year.start"] = { $lte: year };  // start <= year
+            query["year.end"] = { $gte: year };    // end >= year
+        }
+
+        console.log("Filtros aplicados:", query);  // 🔍 Ver qué filtros se aplican
+
         const filteredCars = await Car.find(query);
+        console.log("Resultados obtenidos:", filteredCars);  // 🔍 Ver qué devuelve la consulta
+
         return filteredCars;
     } catch (error) {
+        console.log("Error:", error.message);
         throw new Error("Error al filtrar coches: " + error.message);
     }
 };
