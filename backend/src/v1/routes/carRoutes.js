@@ -9,5 +9,6 @@ router
     .get('/paginated', carController.getPaginatedCars)
     .get('/:id', carController.getOneCar)
     .get('/', carController.getAllCars)
+    .get('/filter', carController.filterCars);
 
 module.exports = router;

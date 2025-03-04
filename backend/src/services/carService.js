@@ -73,6 +73,32 @@ const getGlobalStats = async () => {
     }
 };
 
+const filterCars = async (filters) => {
+    try {
+        const query = {};
+
+        // Filtrar por cada campo según el esquema
+        if (filters.brand) query.brand = filters.brand;
+        if (filters.model) query.model = filters.model;
+        if (filters.year) query.year = parseInt(filters.year);
+        if (filters.engine) query.engine = filters.engine;
+        if (filters.horsepower) query.horsepower = parseInt(filters.horsepower);
+        if (filters.transmission) query.transmission = filters.transmission;
+        if (filters.drivetrain) query.drivetrain = filters.drivetrain;
+        if (filters.max_speed) query.max_speed = parseInt(filters.max_speed);
+        if (filters.weight) query.weight = parseInt(filters.weight);
+        if (filters.fuel_consumption) query.fuel_consumption = filters.fuel_consumption;
+        if (filters.price) query.price = filters.price;
+        if (filters.country) query.country = filters.country;
+        if (filters.acceleration) query.acceleration = filters.acceleration;
+
+        const filteredCars = await Car.find(query);
+        return filteredCars;
+    } catch (error) {
+        throw new Error("Error al filtrar coches: " + error.message);
+    }
+};
+
 const getPaginatedCars = async (page, limit) => {
     try {
         const pageNumber = Math.max(1, page); // Asegura que la página mínima sea 1
@@ -103,6 +129,6 @@ module.exports = {
     getRandomCar,
     getAllBrands,
     getGlobalStats,
-    getPaginatedCars
- 
+    getPaginatedCars,
+    filterCars
 }

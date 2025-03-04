@@ -46,6 +46,16 @@ const getGlobalStats = async (req, res) => {
     }
 };
 
+const filterCars = async (req, res) => {
+    try {
+        const filters = req.query;  // Obtiene los filtros de la URL
+        const filteredCars = await carService.filterCars(filters);  // Llama a la función con filtros
+        res.send({ status: "OK", data: filteredCars });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 const getPaginatedCars = async (req, res) => {
     try {
         const page = Number(req.query.page) || 1;
@@ -64,6 +74,6 @@ module.exports = {
     getRandomCar,
     getAllBrands,
     getGlobalStats,
-    getPaginatedCars
- 
+    getPaginatedCars,
+    filterCars
 }
