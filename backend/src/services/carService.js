@@ -1,9 +1,68 @@
 const Car = require('../database/Car');
 
-const getAllCars = async () => {
+const getAllCars = async (filterParams) => {
     try {
-        return await Car.find(); 
+        const filters = {};
+
+        if (filterParams.brand) {
+            filters.brand = { $regex: filterParams.brand, $options: "i" };
+        }
+        if (filterParams.model) {
+            filters.model = { $regex: filterParams.model, $options: "i" };
+        }
+        if (filterParams.horsepower) {
+            filters.horsepower = filterParams.horsepower;
+        }
+        if (filterParams.engine) {
+            filters.engine = { $regex: filterParams.engine, $options: "i" };
+        }
+        if (filterParams.country) {
+            filters.country = { $regex: filterParams.country, $options: "i" };
+        }
+        if (filterParams.yearStart || filterParams.yearEnd) {
+            // Si proporcionan el inicio del año, lo agregamos al filtro
+            if (filterParams.yearStart) {
+                filters["year.start"] = { $gte: filterParams.yearStart };
+            }
+
+            // Si proporcionan el final del año, lo agregamos al filtro
+            if (filterParams.yearEnd) {
+                filters["year.end"] = { $lte: filterParams.yearEnd };
+            }
+        }
+        if (filterParams.transmission) {
+            filters.transmission = { $regex: filterParams.transmission, $options: "i" };
+        }
+        if (filterParams.drivetrain) {
+            filters.drivetrain = { $regex: filterParams.drivetrain, $options: "i" };
+        }
+        if (filterParams.max_speed) {
+            filters.max_speed = filterParams.max_speed;
+        }
+        if (filterParams.weight) {
+            filters.weight = filterParams.weight;
+        }
+        if (filterParams.fuel_consumption) {
+            filters.fuel_consumption = { $regex: filterParams.fuel_consumption, $options: "i" };
+        }
+        if (filterParams.price) {
+            filters.price = filterParams.price;
+        }
+        
+        
+        if (filterParams.acceleration) {
+            filters.acceleration = { $regex: filterParams.acceleration, $options: "i" };
+        }
+
+
+
+        if (Object.keys(filters).length > 0) {
+            return await Car.find(filters);
+        }
+        console.log("Filtros aplicados:", filters);
+        return await Car.find();
     } catch (error) {
+        console.error("Error en getAllCars:", error);
         throw new Error("Error al obtener coches: " + error.message);
     }
 }
@@ -11,7 +70,7 @@ const getAllCars = async () => {
 const getAllBrands = async () => {
     try {
         // Obtener todas las marcas sin duplicados
-        const brands = await Car.distinct("brand"); 
+        const brands = await Car.distinct("brand");
         return brands;
     } catch (error) {
         throw new Error("Error al obtener marcas: " + error.message);
@@ -47,7 +106,7 @@ const getGlobalStats = async () => {
         const stats = await Car.aggregate([
             {
                 $group: {
-                    _id: null, 
+                    _id: null,
                     totalCars: { $sum: 1 },
                     totalBrands: { $addToSet: "$brand" }, // Lista de marcas únicas
                     avgHorsepower: { $avg: "$horsepower" }, // Potencia media
@@ -70,46 +129,6 @@ const getGlobalStats = async () => {
         return stats[0]; // Devolvemos el primer objeto
     } catch (error) {
         throw new Error("Error al obtener estadísticas globales: " + error.message);
-    }
-};
-
-const filterCars = async (filters) => {
-    try {
-        const query = {};
-
-        // Aplicar filtros con regex para campos de texto
-        if (filters.brand) query.brand = { $regex: new RegExp(filters.brand, 'i') };
-        if (filters.model) query.model = { $regex: new RegExp(filters.model, 'i') };
-        if (filters.engine) query.engine = { $regex: new RegExp(filters.engine, 'i') };
-        if (filters.transmission) query.transmission = { $regex: new RegExp(filters.transmission, 'i') };
-        if (filters.drivetrain) query.drivetrain = { $regex: new RegExp(filters.drivetrain, 'i') };
-        if (filters.fuel_consumption) query.fuel_consumption = { $regex: new RegExp(filters.fuel_consumption, 'i') };
-        if (filters.price) query.price = { $regex: new RegExp(filters.price, 'i') };
-        if (filters.country) query.country = { $regex: new RegExp(filters.country, 'i') };
-        if (filters.acceleration) query.acceleration = { $regex: new RegExp(filters.acceleration, 'i') };
-
-        // Aplicar filtros para campos numéricos
-        if (filters.horsepower) query.horsepower = parseInt(filters.horsepower);
-        if (filters.max_speed) query.max_speed = parseInt(filters.max_speed);
-        if (filters.weight) query.weight = parseInt(filters.weight);
-
-        // Filtro especial para year como objeto
-        if (filters.year) {
-            const year = parseInt(filters.year);
-            query["year.start"] = { $lte: year };  // start <= year
-            query["year.end"] = { $gte: year };    // end >= year
-        }
-
-        console.log("📋 Filtros aplicados:", query);  // 🔍 Ver qué filtros se aplican
-
-        const filteredCars = await Car.find(query);
-
-        console.log("📊 Resultados obtenidos:", filteredCars);  // 🔍 Ver qué devuelve la consulta
-
-        return filteredCars;
-    } catch (error) {
-        console.log("❌ Error en filterCars:", error.message);
-        throw new Error("Error al filtrar coches: " + error.message);
     }
 };
 
@@ -143,6 +162,5 @@ module.exports = {
     getRandomCar,
     getAllBrands,
     getGlobalStats,
-    filterCars,
     getPaginatedCars,
 }

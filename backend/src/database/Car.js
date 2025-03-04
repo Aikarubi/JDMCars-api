@@ -1,5 +1,6 @@
 //const DB = require('./database');
 const mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
 
 const carSchema = new mongoose.Schema({
     brand: String,
@@ -12,7 +13,7 @@ const carSchema = new mongoose.Schema({
     max_speed: Number,
     weight: Number,
     fuel_consumption: String,
-    price: String,
+    price: Number,
     country: String,
     description: String,
     acceleration: String,
