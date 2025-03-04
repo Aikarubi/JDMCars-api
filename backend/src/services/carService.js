@@ -77,21 +77,22 @@ const filterCars = async (filters) => {
     try {
         const query = {};
 
-        // Filtrar por cada campo según el esquema
-        if (filters.brand) query.brand = filters.brand;
-        if (filters.model) query.model = filters.model;
+        // Aplica filtros solo si existen y no están vacíos
+        if (filters.brand) query.brand = { $regex: new RegExp(filters.brand, 'i') };  // Búsqueda parcial e insensible a mayúsculas
+        if (filters.model) query.model = { $regex: new RegExp(filters.model, 'i') };
         if (filters.year) query.year = parseInt(filters.year);
-        if (filters.engine) query.engine = filters.engine;
+        if (filters.engine) query.engine = { $regex: new RegExp(filters.engine, 'i') };
         if (filters.horsepower) query.horsepower = parseInt(filters.horsepower);
-        if (filters.transmission) query.transmission = filters.transmission;
-        if (filters.drivetrain) query.drivetrain = filters.drivetrain;
+        if (filters.transmission) query.transmission = { $regex: new RegExp(filters.transmission, 'i') };
+        if (filters.drivetrain) query.drivetrain = { $regex: new RegExp(filters.drivetrain, 'i') };
         if (filters.max_speed) query.max_speed = parseInt(filters.max_speed);
         if (filters.weight) query.weight = parseInt(filters.weight);
-        if (filters.fuel_consumption) query.fuel_consumption = filters.fuel_consumption;
-        if (filters.price) query.price = filters.price;
-        if (filters.country) query.country = filters.country;
-        if (filters.acceleration) query.acceleration = filters.acceleration;
+        if (filters.fuel_consumption) query.fuel_consumption = { $regex: new RegExp(filters.fuel_consumption, 'i') };
+        if (filters.price) query.price = { $regex: new RegExp(filters.price, 'i') };
+        if (filters.country) query.country = { $regex: new RegExp(filters.country, 'i') };
+        if (filters.acceleration) query.acceleration = { $regex: new RegExp(filters.acceleration, 'i') };
 
+        // Ejecutar consulta
         const filteredCars = await Car.find(query);
         return filteredCars;
     } catch (error) {
