@@ -100,14 +100,15 @@ const filterCars = async (filters) => {
             query["year.end"] = { $gte: year };    // end >= year
         }
 
-        console.log("Filtros aplicados:", query);  // 🔍 Ver qué filtros se aplican
+        console.log("📋 Filtros aplicados:", query);  // 🔍 Ver qué filtros se aplican
 
         const filteredCars = await Car.find(query);
-        console.log("Resultados obtenidos:", filteredCars);  // 🔍 Ver qué devuelve la consulta
+
+        console.log("📊 Resultados obtenidos:", filteredCars);  // 🔍 Ver qué devuelve la consulta
 
         return filteredCars;
     } catch (error) {
-        console.log("Error:", error.message);
+        console.log("❌ Error en filterCars:", error.message);
         throw new Error("Error al filtrar coches: " + error.message);
     }
 };
@@ -142,6 +143,6 @@ module.exports = {
     getRandomCar,
     getAllBrands,
     getGlobalStats,
+    filterCars,
     getPaginatedCars,
-    filterCars
 }

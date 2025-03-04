@@ -49,9 +49,15 @@ const getGlobalStats = async (req, res) => {
 const filterCars = async (req, res) => {
     try {
         const filters = req.query;  // Obtiene los filtros de la URL
+        console.log("🛠️  Filtros recibidos en el controlador:", filters);  // Ver qué filtros llegan
+
         const filteredCars = await carService.filterCars(filters);  // Llama a la función con filtros
+
+        console.log("✅ Coches filtrados devueltos:", filteredCars);  // Ver el resultado antes de enviar la respuesta
+
         res.send({ status: "OK", data: filteredCars });
     } catch (error) {
+        console.log("❌ Error en filterCars (controlador):", error.message);
         res.status(500).json({ error: error.message });
     }
 };
@@ -74,6 +80,6 @@ module.exports = {
     getRandomCar,
     getAllBrands,
     getGlobalStats,
-    getPaginatedCars,
-    filterCars
+    filterCars,
+    getPaginatedCars
 }
