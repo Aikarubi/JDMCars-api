@@ -6,23 +6,20 @@
 <main>
 
     <section id="docs" class="content">
-        <h2>Introducción</h2>
-        <p>Bienvenido a la API JDM, una plataforma diseñada para los amantes de los coches japoneses. Aquí encontrarás
-            información detallada sobre distintos modelos, especificaciones técnicas y características clave.</p>
-        <p>Esta guía te ayudará a entender cómo utilizar la API de forma efectiva y aprovechar sus funciones al máximo.
+        <h2>Introduction</h2>
+        <p>Welcome to the JDM API, a platform designed for Japanese car enthusiasts. Here you will find detailed information on various models, technical specifications and key features.</p>
+        <p>This guide will help you understand how to use the API effectively and get the most out of its features.
         </p>
 
-        <h3>Ruta Principal</h3>
-        <p>La API parte de la ruta principal proporcionada por Render:
-            <span><code>https://jdm-api.onrender.com/v1/cars</code></span>. A partir de esta base, puedes acceder a todos los
-            endpoints disponibles.</p>
+        <h3>Main Route</h3>
+        <p>The API starts from the main path provided by Render:
+            <span><code>https://jdm-api.onrender.com/v1/cars</code></span>. From this basis, you can access all available endpoints.</p>
 
-        <h3>Paginación</h3>
-        <p>La API utiliza un sistema de paginación para facilitar la navegación entre grandes volúmenes de datos. Puedes
-            utilizar los parámetros <span><code>?page</code></span> y <span><code>?limit</code></span> para controlar los resultados.</p>
-        <p><strong>Ejemplo de input:</strong></p>
+        <h3>Pagination</h3>
+        <p>The API uses a paging system to facilitate navigation between large volumes of data. You can use the parameters <span><code>?page</code></span> and <span><code>?limit</code></span> to monitor the results</p>
+        <p><strong>Example of input:</strong></p>
         <pre><span><code>GET https://api-jdm.onrender.com/v1/cars?page=1&limit=2</code></span></pre>
-        <p><strong>Ejemplo de output:</strong></p>
+        <p><strong>Example of output:</strong></p>
         <pre style="background-color: var(--primarioHover); color: var(--secundario); border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 1.2rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
     <code>&lbrace;
     "page": 1,
@@ -33,13 +30,15 @@
         "id": 1,
         "brand": "Nissan",
         "model": "Skyline GT-R",
-        "year": 1995
+        "year": 1995,
+        ...
         &lbrace;,
         &lbrace;
         "id": 2,
         "brand": "Toyota",
         "model": "Supra",
-        "year": 1998
+        "year": 1998,
+        ...
         &lbrace;
     ]
     &lbrace;</code>
@@ -47,54 +46,51 @@
     </section>
 
     <section class="content">
-        <h2>Estructura y Endpoints</h2>
-        <p>La API está organizada en rutas claras y sencillas, comenzando por la base <code><strong>/v1/cars</strong></code>. Desde aquí, puedes acceder a diversos endpoints para obtener listas de coches, detalles específicos, estadísticas y realizar búsquedas avanzadas según tus necesidades.</p>
+        <h2>Structure and Endpoints</h2>
+        <p>The API is organised in clear and simple paths, starting with the base <code><strong>/v1/cars</strong></code>. From here, you can access various endpoints to obtain car lists, specific details, statistics and perform advanced searches according to your needs.</p>
         <ul>
-            <li><code class="resalto">/v1/cars</code> o <code class="resalto">/v1/cars/</code>: Obtiene todos los coches almacenados (getAllCars).</li>
-            <li><code class="resalto">/v1/cars/:id</code>: Obtiene la información detallada de un coche específico mediante su ID (getOneCar).</li>
-            <li><code class="resalto">/v1/cars/random</code>: Devuelve un coche aleatorio (getRandomCar).</li>
-            <li><code class="resalto">/v1/cars/brands</code>: Muestra todas las marcas disponibles (getAllBrands).</li>
-            <li><code class="resalto">/v1/cars/stats</code>: Muestra la media de todas las estadísticas de los coches (getGlobalStat).</li>
+            <li><code class="resalto">/v1/cars</code> o <code class="resalto">/v1/cars/</code>: Gets all stored cars (getAllCars).</li>
+            <li><code class="resalto">/v1/cars/:id</code>: Gets the detailed information of a specific car via its car ID (getOneCar).</li>
+            <li><code class="resalto">/v1/cars/random</code>: Returns a random car (getRandomCar).</li>
+            <li><code class="resalto">/v1/cars/brands</code>: Displays all available brands (getAllBrands).</li>
+            <li><code class="resalto">/v1/cars/stats</code>: Displays the average of all car statistics (getGlobalStat).</li>
         </ul>
-        <p>Ejemplo básico de uso: <code class="resalto">https://api-jdm.onrender.com/v1/cars?brand=Mazda</code> para filtrar por marca.</p>
+        <p>Basic example of use: <code class="resalto">https://api-jdm.onrender.com/v1/cars?brand=Mazda</code> to filter by brand.</p>
     </section>
     
     <section class="content">
-        <h2>Parámetros y Filtrado</h2>
-        <p>La API permite utilizar múltiples parámetros para filtrar los resultados y encontrar modelos específicos de forma sencilla. Puedes combinar varios filtros en la misma URL para afinar las búsquedas según lo que necesites. A continuación, se muestran algunos ejemplos:</p>
+        <h2>Parameters and Filtering</h2>
+        <p>The API allows you to use multiple parameters to filter the results and find specific models easily. You can combine multiple filters on the same URL to refine your searches according to your needs. Some examples are shown below:</p>
         <ul>
-            <li><code class="resalto">/v1/cars?brand=Nissan</code>: Filtra por marca.</li>
-            <li><code class="resalto">/v1/cars?model=Supra</code>: Filtra por modelo.</li>
-            <li><code class="resalto">/v1/cars?horsepower=276</code>: Filtra por potencia en caballos.</li>
-            <li><code class="resalto">/v1/cars?engine=2JZ-GTE</code>: Filtra por tipo de motor.</li>
-            <li><code class="resalto">/v1/cars?country=Japan</code>: Filtra por país de origen.</li>
-            <li><code class="resalto">/v1/cars?transmission=Manual</code>: Filtra por tipo de transmisión.</li>
-            <li><code class="resalto">/v1/cars?drivetrain=RWD</code>: Filtra por tipo de tracción.</li>
-            <li><code class="resalto">/v1/cars?max_speed=250</code>: Filtra por velocidad máxima.</li>
-            <li><code class="resalto">/v1/cars?acceleration=5.0</code>: Filtra por aceleración.</li>
-            <li><code class="resalto">/v1/cars?weight=1400</code>: Filtra por peso.</li>
-            <li><code class="resalto">/v1/cars?price=25000</code>: Filtra por precio.</li>
-            <li><code class="resalto">/v1/cars?fuel_consumption=10.0%20L/100%20km</code>: Filtra por consumo de combustible.</li>
-            <li><code class="resalto">/v1/cars?yearStart=1995&yearEnd=2000</code>: Filtra por rango de años.</li>
+            <li><code class="resalto">/v1/cars?brand=Nissan</code>: Filter by brand.</li>
+            <li><code class="resalto">/v1/cars?model=Supra</code>: Filter by model.</li>
+            <li><code class="resalto">/v1/cars?horsepower=276</code>: Filter by horsepower.</li>
+            <li><code class="resalto">/v1/cars?engine=2JZ-GTE</code>: Filter by engine type.</li>
+            <li><code class="resalto">/v1/cars?country=Japan</code>: Filter by country of origin.</li>
+            <li><code class="resalto">/v1/cars?transmission=Manual</code>: Filter by transmission type.</li>
+            <li><code class="resalto">/v1/cars?drivetrain=RWD</code>: Filter by type of traction.</li>
+            <li><code class="resalto">/v1/cars?max_speed=250</code>: Filter by maximum speed.</li>
+            <li><code class="resalto">/v1/cars?acceleration=5.0</code>: Filter by acceleration.</li>
+            <li><code class="resalto">/v1/cars?weight=1400</code>: Filter by weight.</li>
+            <li><code class="resalto">/v1/cars?price=25000</code>: Filter by price.</li>
+            <li><code class="resalto">/v1/cars?fuel_consumption=10.0%20L/100%20km</code>: Filter by fuel consumption.</li>
+            <li><code class="resalto">/v1/cars?yearStart=1995&yearEnd=2000</code>: Filter by year range.</li>
         </ul>
-        <p>Además, es posible combinar múltiples parámetros para obtener resultados más precisos. Por ejemplo:</p>
+        <p>In addition, it is possible to combine multiple parameters to obtain more accurate results. For example:</p>
         <p><code class="resalto">https://api-jdm.onrender.com/v1/cars?brand=Subaru&engine=EJ20%20Turbo&transmission=Manual</code></p>
     </section>
     
 
     <section class="content">
-        <h2>Objetivos y Mejoras Futuras</h2>
-        <p>Entre los objetivos a futuro, se planea añadir motocicletas a la API y desarrollar funciones avanzadas como comparaciones detalladas entre vehículos y estadísticas personalizadas.</p>
-        <p>Además, se trabajará en la optimización del rendimiento, asegurando tiempos de respuesta rápidos y eficientes
-            incluso con grandes volúmenes de datos.</p>
-        <p>La documentación también será ampliada, incluyendo ejemplos prácticos y casos de uso detallados para
-            simplificar la implementación por parte de los desarrolladores.</p>
+        <h2>Objectives and Future Improvements</h2>
+        <p>Future goals include adding motorbikes to the API and developing advanced features such as detailed vehicle comparisons and customised statistics.</p>
+        <p>In addition, work will be done on optimising performance, ensuring fast and efficient response times even with large volumes of data.</p>
+        <p>The documentation will also be extended to include practical examples and detailed use cases to simplify implementation for developers.</p>
     </section>
 
     <section id="about" class="content">
-        <h2>Sobre esta Guía</h2>
-        <p>Esta guía ha sido creada para facilitar el uso de la API JDM y brindar toda la información necesaria de forma
-            clara y precisa.</p>
-            <p>Si tienes sugerencias o encuentras algún problema, puedes ponerte en contacto a través de la <a href="https://portfolio-aikarubi.netlify.app/views/contacto" target="_blank">sección de contacto</a> de mi portfolio.</p>
+        <h2>About the Guide</h2>
+        <p>This guide has been created to facilitate the use of the JDM API and to provide all the necessary information in a clear and accurate way.</p>
+            <p>If you have any suggestions or encounter any problems, you can contact me through the <a href="https://portfolio-aikarubi.netlify.app/views/contacto" target="_blank">contact section</a> from my portfolio.</p>
     </section>
 </main>
