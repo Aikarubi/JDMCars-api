@@ -1,17 +1,38 @@
 .navegacion-principal {
     position: absolute;
-    top: 2rem; /* Ajusta según necesites */
-    right: 4rem; /* Ajusta según necesites */
+    top: 0rem;
+    left: 4rem;
+    right: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegacion-principal .logo img {
+    margin-top: 0.8rem;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.navegacion-principal .logo img:hover {
+    transform: scale(1.1);
+}
+
+.navegacion-principal .menu {
     display: flex;
     gap: 2rem;
 }
 
-.navegacion-principal a {
+.navegacion-principal .menu a {
     font-size: 2rem;
     color: var(--secundario);
     text-decoration: none;
 }
 
+.navegacion-principal .menu a:hover {
+    color: var(--secundarioHover);
+}
 
 a {
     text-decoration: none;
