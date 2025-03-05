@@ -48,11 +48,9 @@ const getAllCars = async (filterParams) => {
         if (filterParams.price) {
             filters.price = filterParams.price;
         }
-        
-        
         if (filterParams.acceleration) {
-            filters.acceleration = { $regex: filterParams.acceleration, $options: "i" };
-        }
+            filters.acceleration = { $regex: filterParams.acceleration.split(" ")[0], $options: "i" };
+        }        
 
 
 
