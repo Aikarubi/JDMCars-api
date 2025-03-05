@@ -10,3 +10,11 @@
     max-width: 800px;
     text-align: left;
 }
+
+span {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
