@@ -22,7 +22,7 @@
         <p><strong>Ejemplo de input:</strong></p>
         <pre><span><code>GET https://api-jdm.onrender.com/v1/cars?page=1&limit=2</code></span></pre>
         <p><strong>Ejemplo de output:</strong></p>
-        <pre style="background-color: var(--primario); color: var(--secundario); border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 1.2rem;">
+        <pre style="background-color: var(--primarioHover); color: var(--secundario); border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 1.2rem; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;">
     <code>&lbrace;
     "page": 1,
     "limit": 2,
@@ -47,43 +47,43 @@
 
     <section class="content">
         <h2>Estructura y Endpoints</h2>
-        <p>La API está organizada en rutas claras y sencillas, comenzando por la base <code>/v1/cars</code>. Desde aquí, puedes acceder a diversos endpoints para obtener listas de coches, detalles específicos, estadísticas y realizar búsquedas avanzadas según tus necesidades.</p>
+        <p>La API está organizada en rutas claras y sencillas, comenzando por la base <code><strong>/v1/cars</strong></code>. Desde aquí, puedes acceder a diversos endpoints para obtener listas de coches, detalles específicos, estadísticas y realizar búsquedas avanzadas según tus necesidades.</p>
         <ul>
-            <li><code>/v1/cars</code> o <code>/v1/cars/</code>: Obtiene todos los coches almacenados (getAllCars).</li>
-            <li><code>/v1/cars/:id</code>: Obtiene la información detallada de un coche específico mediante su ID (getOneCar).</li>
-            <li><code>/v1/cars/random</code>: Devuelve un coche aleatorio (getRandomCar).</li>
-            <li><code>/v1/cars/brands</code>: Muestra todas las marcas disponibles (getAllBrands).</li>
-            <li><code>/v1/cars/stats</code>: Muestra la media de todas las estadísticas de los coches (getGlobalStat).</li>
+            <li><code class="resalto">/v1/cars</code> o <code class="resalto">/v1/cars/</code>: Obtiene todos los coches almacenados (getAllCars).</li>
+            <li><code class="resalto">/v1/cars/:id</code>: Obtiene la información detallada de un coche específico mediante su ID (getOneCar).</li>
+            <li><code class="resalto">/v1/cars/random</code>: Devuelve un coche aleatorio (getRandomCar).</li>
+            <li><code class="resalto">/v1/cars/brands</code>: Muestra todas las marcas disponibles (getAllBrands).</li>
+            <li><code class="resalto">/v1/cars/stats</code>: Muestra la media de todas las estadísticas de los coches (getGlobalStat).</li>
         </ul>
-        <p>Ejemplo básico de uso: <code>/v1/cars?brand=Nissan</code> para filtrar por marca.</p>
+        <p>Ejemplo básico de uso: <code class="resalto">https://api-jdm.onrender.com/v1/cars?brand=Mazda</code> para filtrar por marca.</p>
     </section>
     
     <section class="content">
         <h2>Parámetros y Filtrado</h2>
         <p>La API permite utilizar múltiples parámetros para filtrar los resultados y encontrar modelos específicos de forma sencilla. Puedes combinar varios filtros en la misma URL para afinar las búsquedas según lo que necesites. A continuación, se muestran algunos ejemplos:</p>
         <ul>
-            <li><code>/v1/cars?brand=Nissan</code>: Filtra por marca.</li>
-            <li><code>/v1/cars?model=Supra</code>: Filtra por modelo.</li>
-            <li><code>/v1/cars?horsepower=276</code>: Filtra por potencia en caballos.</li>
-            <li><code>/v1/cars?engine=2JZ-GTE</code>: Filtra por tipo de motor.</li>
-            <li><code>/v1/cars?country=Japan</code>: Filtra por país de origen.</li>
-            <li><code>/v1/cars?transmission=Manual</code>: Filtra por tipo de transmisión.</li>
-            <li><code>/v1/cars?drivetrain=RWD</code>: Filtra por tipo de tracción.</li>
-            <li><code>/v1/cars?max_speed=250</code>: Filtra por velocidad máxima.</li>
-            <li><code>/v1/cars?weight=1400</code>: Filtra por peso.</li>
-            <li><code>/v1/cars?price=25000</code>: Filtra por precio.</li>
-            <li><code>/v1/cars?fuel_consumption=10.0%20L/100%20km</code>: Filtra por consumo de combustible.</li>
-            <li><code>/v1/cars?yearStart=1995&yearEnd=2000</code>: Filtra por rango de años.</li>
+            <li><code class="resalto">/v1/cars?brand=Nissan</code>: Filtra por marca.</li>
+            <li><code class="resalto">/v1/cars?model=Supra</code>: Filtra por modelo.</li>
+            <li><code class="resalto">/v1/cars?horsepower=276</code>: Filtra por potencia en caballos.</li>
+            <li><code class="resalto">/v1/cars?engine=2JZ-GTE</code>: Filtra por tipo de motor.</li>
+            <li><code class="resalto">/v1/cars?country=Japan</code>: Filtra por país de origen.</li>
+            <li><code class="resalto">/v1/cars?transmission=Manual</code>: Filtra por tipo de transmisión.</li>
+            <li><code class="resalto">/v1/cars?drivetrain=RWD</code>: Filtra por tipo de tracción.</li>
+            <li><code class="resalto">/v1/cars?max_speed=250</code>: Filtra por velocidad máxima.</li>
+            <li><code class="resalto">/v1/cars?acceleration=5.0</code>: Filtra por aceleración.</li>
+            <li><code class="resalto">/v1/cars?weight=1400</code>: Filtra por peso.</li>
+            <li><code class="resalto">/v1/cars?price=25000</code>: Filtra por precio.</li>
+            <li><code class="resalto">/v1/cars?fuel_consumption=10.0%20L/100%20km</code>: Filtra por consumo de combustible.</li>
+            <li><code class="resalto">/v1/cars?yearStart=1995&yearEnd=2000</code>: Filtra por rango de años.</li>
         </ul>
         <p>Además, es posible combinar múltiples parámetros para obtener resultados más precisos. Por ejemplo:</p>
-        <p><code>/v1/cars?brand=Subaru&engine=EJ20%20Turbo&transmission=Manual</code></p>
+        <p><code class="resalto">https://api-jdm.onrender.com/v1/cars?brand=Subaru&engine=EJ20%20Turbo&transmission=Manual</code></p>
     </section>
     
 
     <section class="content">
         <h2>Objetivos y Mejoras Futuras</h2>
-        <p>Entre los objetivos a futuro, se planea añadir motocicletas a la API, implementar nuevas funciones como
-            comparaciones detalladas y mejorar los sistemas de filtrado.</p>
+        <p>Entre los objetivos a futuro, se planea añadir motocicletas a la API y desarrollar funciones avanzadas como comparaciones detalladas entre vehículos y estadísticas personalizadas.</p>
         <p>Además, se trabajará en la optimización del rendimiento, asegurando tiempos de respuesta rápidos y eficientes
             incluso con grandes volúmenes de datos.</p>
         <p>La documentación también será ampliada, incluyendo ejemplos prácticos y casos de uso detallados para
@@ -94,6 +94,6 @@
         <h2>Sobre esta Guía</h2>
         <p>Esta guía ha sido creada para facilitar el uso de la API JDM y brindar toda la información necesaria de forma
             clara y precisa.</p>
-        <p>Si tienes sugerencias o encuentras algún problema, no dudes en ponerte en contacto.</p>
+            <p>Si tienes sugerencias o encuentras algún problema, puedes ponerte en contacto a través de la <a href="https://portfolio-aikarubi.netlify.app/views/contacto" target="_blank">sección de contacto</a> de mi portfolio.</p>
     </section>
 </main>

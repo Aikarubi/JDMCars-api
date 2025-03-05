@@ -12,9 +12,31 @@
 }
 
 span {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
+    background-color: var(--primarioHover);
+    color: var(--secundario);
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.resalto {
+    font-weight: bold;
+    background-color: rgba(190, 190, 190, 0.586);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+}
+
+#about a {
+    color: var(--rojo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#about a:hover {
+    color: var(--rojoHover);
+}
+
+#about a:visited {
+    color: var(--resalto);
 }
