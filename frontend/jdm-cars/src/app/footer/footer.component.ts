@@ -21,10 +21,12 @@ export class FooterComponent implements OnInit {
   }
 
   loadCarData() {
-    this.apiService.getCarData().subscribe(data => {
-      this.carsCount = data.carsCount;
-      this.brandsCount = data.brandsCount;
-      this.averageSpeed = data.averageSpeed;
+    this.apiService.getCarData().subscribe(response => {
+      this.carsCount = response.data.totalCars;
+      this.brandsCount = response.data.totalBrands;
+      this.averageSpeed = response.data.avgMaxSpeed;
+    }, error => {
+      console.error("Error:", error);
     });
   }
 }

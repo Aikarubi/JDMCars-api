@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private API_URL = 'https://jdm-api.onrender.com/v1/cars/stats';
+  private API_URL = 'https://jdm-api.onrender.com/v1/cars/';
 
   constructor(public http: HttpClient) { }
 
   // Método para obtener los datos
-  getCarData(): Observable<any> {
-    return this.http.get<any>(this.API_URL);
+  public getCarData(): Observable<any> {
+    const urlGetData: string = `${this.API_URL}stats`;
+    return this.http.get(urlGetData);
   }
 }
