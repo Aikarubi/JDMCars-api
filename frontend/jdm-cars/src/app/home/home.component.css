@@ -64,15 +64,18 @@
 
 /* Estilo responsive */
 @media (max-width: 768px) {
+    .home {
+        padding: 5rem 2rem;
+    }
     .home h1 {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .home p {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .cta-button {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 }
