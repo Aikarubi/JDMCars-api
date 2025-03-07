@@ -28,3 +28,15 @@ h1 {
 .contenido-video {
     z-index: 1;
 }
+
+/* Estilos para pantallas con min-width: 768px */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+
+    .video {
+        min-height: 0rem;
+    }
+}
