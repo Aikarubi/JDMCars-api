@@ -23,3 +23,24 @@ a {
 a:hover {
     color: var(--secundarioHover);
 }
+
+/* Estilos para pantallas con min-width: 768px */
+@media (max-width: 768px) {
+    .navegacion-principal {
+        position: absolute;
+        top: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .navegacion-principal a {
+        font-size: 2rem;
+    }
+
+    a {
+        margin: 0 1rem;
+
+    }
+}
